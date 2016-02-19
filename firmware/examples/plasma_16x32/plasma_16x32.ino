@@ -7,8 +7,8 @@
 // BSD license, all text above must be included in any redistribution.
 
 
-#include "Adafruit_mfGFX/Adafruit_mfGFX.h"   // Core graphics library
-#include "RGBmatrixPanel/RGBmatrixPanel.h" // Hardware-specific library
+#include "Adafruit_mfGFX.h"   // Core graphics library
+#include "RGBmatrixPanel.h" // Hardware-specific library
 #include "math.h"
 
 
@@ -107,7 +107,7 @@ void loop() {
         + (int8_t)sinetab[(uint8_t)((x2 * x2 + y2 * y2) >> 4)]
         + (int8_t)sinetab[(uint8_t)((x3 * x3 + y3 * y3) >> 5)]
         + (int8_t)sinetab[(uint8_t)((x4 * x4 + y4 * y4) >> 5)];
-      matrix.drawPixel(x, y, matrix.ColorHSV(value * 3, 255, 255, true));
+      matrix.drawPixel(x, y, matrix.ColorHSV(value * 3, 255, 100, true));
       x1--; x2--; x3--; x4--;
     }
     y1--; y2--; y3--; y4--;
@@ -118,7 +118,7 @@ void loop() {
   angle3 += 0.13;
   angle4 -= 0.15;
   hueShift += 2;
-
   matrix.swapBuffers(false);
+  delay(200);
 }
 
