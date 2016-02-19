@@ -53,8 +53,8 @@ BSD license, all text above must be included in any redistribution.
 
 #if defined (STM32F10X_MD) || !defined(PLATFORM_ID)		//Core
 #warning "CORE NEW"
-//  #define pinSetFast(_pin)		PIN_MAP[_pin].gpio_peripheral->BSRR = PIN_MAP[_pin].gpio_pin
-//  #define pinResetFast(_pin)	PIN_MAP[_pin].gpio_peripheral->BRR = PIN_MAP[_pin].gpio_pin
+  #define pinSetFast(_pin)		PIN_MAP[_pin].gpio_peripheral->BRR = PIN_MAP[_pin].gpio_pin
+  #define pinResetFast(_pin)	PIN_MAP[_pin].gpio_peripheral->BSRR = PIN_MAP[_pin].gpio_pin
 
  #if defined(FASTER)		// Parital Port writes
   #define R1	A6		// bit 2 = RED 1
