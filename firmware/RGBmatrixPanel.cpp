@@ -47,8 +47,8 @@ BSD license, all text above must be included in any redistribution.
 
 #if !defined(PLATFORM_ID)		// Core v0.3.4
 #warning "CORE v0.3.4"
-  #define pinSetFast(_pin)		PIN_MAP[_pin].gpio_peripheral->BSRR = PIN_MAP[_pin].gpio_pin
-  #define pinResetFast(_pin)	PIN_MAP[_pin].gpio_peripheral->BRR = PIN_MAP[_pin].gpio_pin
+  #define pinSetFast(_pin)		PIN_MAP[_pin].gpio_peripheral->BRR = PIN_MAP[_pin].gpio_pin
+  #define pinResetFast(_pin)	PIN_MAP[_pin].gpio_peripheral->BSRR = PIN_MAP[_pin].gpio_pin
 #endif
 
 #if defined (STM32F10X_MD) || !defined(PLATFORM_ID)		//Core
